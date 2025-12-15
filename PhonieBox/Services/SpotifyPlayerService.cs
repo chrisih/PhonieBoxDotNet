@@ -33,7 +33,7 @@ namespace PhonieBox.Services
         if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
           return "-e ./lib/x86_64/spotifyd";
         else if(RuntimeInformation.IsOSPlatform(OSPlatform.Linux) && (RuntimeInformation.ProcessArchitecture == Architecture.Arm || RuntimeInformation.ProcessArchitecture == Architecture.Arm64))
-          return "./lib/armv7/spotifyd";
+          return "lib/armv7/spotifyd";
         throw new NotSupportedException("Unsupported OS platform or architecture for spotifyd");
       }
     }
