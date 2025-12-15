@@ -53,7 +53,10 @@ namespace PhonieBox.Services
       if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         startInfo.FileName = "wsl.exe";
       else
+      {
+        startInfo.WorkingDirectory = Path.Combine(AppContext.BaseDirectory, "lib/armv7");
         startInfo.FileName = Command;
+      }
 
       if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         startInfo.Arguments = Command;
